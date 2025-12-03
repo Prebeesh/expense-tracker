@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Money Manager</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load React Libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Load Babel Standalone Compiler (to run JSX directly in the browser) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Custom style for body background -->
+    <style>
+        body { background-color: #0f172a; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- Root element where React will mount the app -->
+    <div id="root">
+        <div class="text-center p-20 text-slate-500 animate-pulse">Loading Application...</div>
+    </div>
+
+    <!-- Firebase SDK Imports (must be loaded as modules) -->
+    <script type="module">
+        // Importing specific functions from Firebase v10 SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+        import { getFirestore, doc, addDoc, setDoc, deleteDoc, onSnapshot, collection, query, where, serverTimestamp, getDocs } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+        
+        // Expose Firebase services globally for use in the App.jsx script
+        // We expose the functions because Babel scripts cannot use 'import' outside of a module environment
+        window.FirebaseServices = {
+            initializeApp, getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged,
+            getFirestore, doc, addDoc, setDoc, deleteDoc, onSnapshot, collection, query, where, serverTimestamp, getDocs
+        };
+        // Log levels for Firestore debugging
+        console.log("[Firebase]: Services loaded successfully.");
+    </script>
+    
+    <!-- 1. Load your configuration (MUST BE EDITED BY USER) -->
+    <script type="module" src="./firebaseConfig.js"></script>
+
+    <!-- 2. Load and run the main application component (processed by Babel) -->
+    <!-- data-type="module" is added to ensure this script is treated as a module by Babel for compatibility -->
+    <script type="text/babel" data-type="module" src="./App.jsx"></script>
+</body>
+</html>
