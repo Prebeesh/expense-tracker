@@ -7,12 +7,12 @@
 
 // Define the configuration object (Replace these with your actual values)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyBfj10wMubBYdNFwDUnJGRDLfZDX_fP-4o",
+    authDomain: "expense-tracker-60941.firebaseapp.com",
+    projectId: "expense-tracker-60941",
+    storageBucket: "expense-tracker-60941.firebasestorage.app",
+    messagingSenderId: "776465310724",
+    appId: "1:776465310724:web:1d4e23de847a3ebd2c8151"
 };
 
 // Define the global variables provided by the canvas environment
