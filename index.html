@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Money Manager</title>
+    <!-- Load Tailwind CSS via CDN for simplicity, though PostCSS is better -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom style for body background -->
+    <style>
+        body {
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+  <script type="module" crossorigin src="/expense-tracker/assets/index-d67b4d12.js"></script>
+</head>
+
+<body>
+    <!-- Error Trap -->
+    <script>
+        window.onerror = function (message, source, lineno, colno, error) {
+            console.error("Global Error:", message);
+            const root = document.getElementById('root');
+            if (root && root.innerHTML.includes("Loading")) {
+                root.innerHTML += `<div style="color: red; padding: 20px;"><h3>Startup Error</h3><p>${message}</p></div>`;
+            }
+        };
+    </script>
+
+    <!-- Root element where React will mount the app -->
+    <div id="root">
+        <div class="text-center p-20 text-slate-500 animate-pulse">Loading Application...</div>
+    </div>
+
+    <!-- 1. Load globals needed for App.jsx (shim) -->
+    
+
+    <!-- 2. Mount the Application -->
+    
+</body>
+
+</html>
